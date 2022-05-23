@@ -10,7 +10,8 @@ public class Scenery {
 		this.background = m;
 		
 	}
-
+	
+	//SKDJSHDFSJDFHSJDFHSDJKFHSDJKFHSDKJFSHDHJKFHFJKDHFJKSJKFHSDKFHS
 	public void setScenery(String m) {
 		this.background = m;
 	}
