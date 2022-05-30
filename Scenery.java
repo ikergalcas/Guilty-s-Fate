@@ -1,17 +1,22 @@
+package background;
 
 import java.util.HashSet;
-import java.util.TreeSet;
 import java.util.Iterator;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.JFrame;
+import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
 public class Scenery {
 	private String background;
 	private HashSet<Action> actions = new HashSet<Action>();
+	int id;
 
 	public Scenery(String bck, HashSet<Action> ar) {
 		this.background = bck;
@@ -33,6 +38,22 @@ public class Scenery {
 
 	public HashSet<Action> getSetOfActions() {
 		return this.actions;
+	}
+
+	public HashSet<Action> actionGroup(HashSet<Action> set, int id) throws Exception {
+		Boolean validId = false;
+		HashSet<Action> sol = new HashSet<Action>();
+		for (Action act : set) {
+			if (act.getId() == id) {
+				sol.add(act);
+				validId = true;
+			}
+		}
+		if (validId) {
+			return sol;
+		} else {
+			throw new Exception("Invalid scenary id");
+		}
 	}
 
 	private void changeBackground(String m) throws Exception {
@@ -62,8 +83,9 @@ public class Scenery {
 	 * 
 	 */
 
+	JFrame window;
+
 	public void showActions(HashSet<Action> act) {
-		JFrame window;
 		final JTextArea messageText;
 
 		window = new JFrame();
@@ -76,12 +98,12 @@ public class Scenery {
 		String msg = "";
 		int cont = 1;
 		while (it.hasNext()) {
-			msg += String.valueOf(cont) + " " + it.next() + "\n";
+			msg += String.valueOf(cont) + " " + it.next() + "\n" + "\n";
 			cont++;
 		}
 
 		messageText = new JTextArea(msg);
-		messageText.setBounds(50, 410, 700, 200);
+		messageText.setBounds(50, 350, 700, 200);
 		messageText.setBackground(Color.BLUE);
 		messageText.setForeground(Color.white);
 		messageText.setEditable(false);
