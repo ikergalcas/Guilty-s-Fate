@@ -51,15 +51,14 @@ public class Scenery {
 			// Aqui cambiamos la imagen de fondo (el mapa)
 		}
 	}
-	/* QUE ES ESTO???
+	/*
+	 * QUE ES ESTO???
 	 * 
 	 * 
-	 * private void changeActions(Action a) throws Exception { 
-	 * if (a == this.a) {
-	 * throw new Exception("You have already these actions"); 
+	 * private void changeActions(Action a) throws Exception { if (a == this.a) {
+	 * throw new Exception("You have already these actions"); }
+	 * 
 	 * }
-	 * 
-	 *}
 	 * 
 	 */
 
@@ -94,5 +93,16 @@ public class Scenery {
 		window.setVisible(true);
 	}
 
-}
+	public void showBackground() { // (String bck) {
+		JPanel bgPanel[] = new JPanel[10];
+		JLabel bgLabel[] = new JLabel[10];
 
+		bgPanel[1] = new JPanel();
+		bgPanel[1].setBounds(50, 50, 700, 350);
+		bgPanel[1].setBackground(Color.YELLOW);
+		bgPanel[1].setLayout(null);
+
+		window.add(bgPanel[1]);
+	}
+
+}
