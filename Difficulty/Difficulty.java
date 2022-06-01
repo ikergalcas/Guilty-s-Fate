@@ -1,9 +1,9 @@
-package Example;
+
 
 public class Difficulty implements iDifficulty {
 	private final static int NUM_DIFFICULTY = 3;
 	
-	private int difficulty;
+	private int difficulty = -1;
 	private final static String[] difficultyNames = { "Easy", "Medium", "Hard" };
 	private final static int[] difficultyTimes = { 100, 50, 10 };
 	
@@ -15,6 +15,13 @@ public class Difficulty implements iDifficulty {
 			throw new OutOfRange("El valor introcucido no coindice con ninguna difficultad.");
 		}
 		this.difficulty = diff;
+	}
+	
+	@Override
+	public void selectDifficultyGraphical() {
+		DifficultyGraphic select = new DifficultyGraphic();
+		difficulty = select.selectDifficultyGraphic();
+		while(difficulty != -1);
 	}
 	
 	public static Difficulty createDifficulty(int diff) {
@@ -31,6 +38,11 @@ public class Difficulty implements iDifficulty {
 		return difficultyTimes;
 	}
 
+	@Override
+	public int getDifficultyInt() {
+		return difficulty;
+	}
+	
 	@Override
 	public String getDifficultyString() {
 		return difficultyNames[difficulty];
