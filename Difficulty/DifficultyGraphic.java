@@ -4,10 +4,10 @@ import java.awt.event.*;
 
 public class DifficultyGraphic extends JFrame implements ActionListener {
 	JButton boton1, boton2, boton3;
-	private int difficultyNum;
+	private int difficultyNum=-1;
 	public DifficultyGraphic() {
 		setLayout(null);
-		boton1 = new JButton("Fácil");
+		boton1 = new JButton("FÃ¡cil");
 		boton2 = new JButton("Medium");
 		boton3 = new JButton("Dificil");
 		boton1.setBounds(282, 250, 100, 30);
@@ -19,31 +19,31 @@ public class DifficultyGraphic extends JFrame implements ActionListener {
 		boton1.addActionListener(this);
 		boton2.addActionListener(this);
 		boton3.addActionListener(this);
+		this.setBounds(0,0,450,350);
+		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		while(difficultyNum==-1) {
+			System.out.print("");
+		}
 	}
+	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == boton1) {
-			System.out.println("Has seleccionado dificultad Facil");
 			difficultyNum = 0;
-			System.exit(0);
+			System.exit(1);
 		}else if(e.getSource() == boton2) {
-			System.out.println("Has seleccionado dificultad Medio");
 			difficultyNum = 1;
-			System.exit(0);
+			System.exit(1);
 		}else {
-			System.out.println("Has seleccionado dificultad Dificil");
 			difficultyNum = 2;
-			System.exit(0);
+			System.exit(1);
 		}
 		
 	}
 	
-	public int selectDifficultyGraphic() {
-		DifficultyGraphic difficultad =new DifficultyGraphic();
-        difficultad.setBounds(0,0,450,350);
-        difficultad.setVisible(true);
-        difficultad.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        return difficultyNum; 
+	public int selectDifficultyGraphic(){
+        return difficultyNum;
 	}
 }
