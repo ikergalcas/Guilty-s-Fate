@@ -1,6 +1,9 @@
-package Example;
 
 public interface iDifficulty {
+	
+	public int getDifficultyInt();
+	
+	public void selectDifficultyGraphical();
 	
 	String[] getAllDifficulties();
 	
