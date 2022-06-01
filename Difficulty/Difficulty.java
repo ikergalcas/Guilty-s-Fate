@@ -21,7 +21,6 @@ public class Difficulty implements iDifficulty {
 	public void selectDifficultyGraphical() {
 		DifficultyGraphic select = new DifficultyGraphic();
 		difficulty = select.selectDifficultyGraphic();
-		while(difficulty != -1);
 	}
 	
 	public static Difficulty createDifficulty(int diff) {
