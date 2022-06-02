@@ -45,7 +45,7 @@ public class GameTimer {
 						public void actionPerformed(ActionEvent e) {
 							jframe.dispose();
 							UI.window.setVisible(false);
-							
+							new GameManager();
 						}
 					});
 
