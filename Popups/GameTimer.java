@@ -35,7 +35,6 @@ public class GameTimer {
 
 				if (i < 0) {
 					timer.cancel();
-					jLabel.setVisible(false);
 					jLabel.setText("Time's up! The train crashed");
 					jLabel.setVisible(true);
 					jframe.add(b);
