@@ -1,3 +1,5 @@
+package background;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -63,3 +65,10 @@ public class Scenery {
     public Set<Action> getActGroup() {
         return actGroup;
     }
+
+	public void setActions(Set<Action> actions) {
+		this.actions = actions;
+	}
+    
+    
+}
